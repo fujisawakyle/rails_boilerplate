@@ -1,0 +1,139 @@
+/////////////////////////////////////////////////////
+// RULES LAYOUT:
+// 1) Box (margin, padding, display, etc)
+//
+// 2) Border & Background (border, border-radius, bg, etc)
+//
+// 3) Text (color, font-size, text-transform, etc)
+//
+// 4) Other stuff (transforms, animations, etc)
+//
+/////////////////////////////////////////////////////
+
+// ------------------
+// Colors
+// ------------------
+
+
+// ------------------
+// Fonts
+// ------------------
+$h-font: sans-serif;
+$p-font: sans-serif;
+
+
+// ------------------
+// Measurements
+// ------------------
+$max-body-width: 50em;
+
+
+// ------------------
+// "Root" Styles
+// ------------------
+html {
+  box-sizing: border-box;
+
+  font-size: 22px;
+
+  @include breakpoint(sm-only) {
+    font-size: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+
+svg {
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+
+// ------------------
+// Forms
+// ------------------
+input {
+  border: 0;
+}
+
+// ------------------
+// Typography
+// ------------------
+body {
+  // background-color: $pri-bg-color;
+
+  // @include font($family: $p-font, $color: $dark-copy-color);
+}
+
+p {
+  margin-bottom: .8em;
+}
+
+.blurb {
+  text-align: justify;
+  text-align-last: center;
+}
+
+p,
+ul {
+  @include font($lh: 1.4);
+}
+
+h1 {
+  @include font($size: 1.4rem);
+}
+
+h1,
+h3 {
+  @include font($family: $p-font, $weight: bold);
+  text-transform: uppercase;
+}
+
+h2 {
+  @include font($family: $h-font, $size: 2rem);
+  text-transform: uppercase;
+}
+
+h3 {
+  @include font($size: 1rem);
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+
+// ------------------
+// Links
+// ------------------
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+p #{$a-tags} {
+  text-decoration: none;
+}
+
+p #{$a-tags-hover} {
+  text-decoration: none;
+}
